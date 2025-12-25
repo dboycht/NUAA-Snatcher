@@ -260,10 +260,3 @@ def grab_courses(open_at:str,
 
         # 维持你原有的外层节奏
         time.sleep(POST_INTERVAL)
-
-
-def main():
-    # 例如：4665
-    session = make_session(cookie, pid)
-    ids, pid, used = course_info(session, pid)
-    grab_courses(session, ids, pid, used)

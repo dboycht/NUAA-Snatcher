@@ -173,10 +173,13 @@
              <hour>11</hour>
              <minute>45</minute>
              <second>14</second>
-             <year>2025</year>
+             <year>2024</year>
              <month>12</month>
              <day>14</day>
             </datetime>
+           </property>
+           <property name="displayFormat">
+            <string>yyyy/M/d H:mm:ss</string>
            </property>
           </widget>
          </item>
@@ -490,7 +493,8 @@
     </property>
     <addaction name="action"/>
     <addaction name="separator"/>
-    <addaction name="action_3"/>
+    <addaction name="action_2"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -500,9 +504,14 @@
     <string>访问仓库</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="action_2">
    <property name="text">
     <string>我是彩蛋</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>

@@ -11,6 +11,15 @@ from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
 from PySide6 import QtGui
 from fuck_page import *
+import webbrowser
+
+def resp():
+    webbrowser.open("https://github.com/dboycht/nuaauixuanke")
+
+
+def egg():
+    webbrowser.open("https://www.bilibili.com/video/BV1GJ411x7h7")
+
 
 class Stats(object):
 
@@ -39,23 +48,27 @@ class Stats(object):
         self.ui.commandLinkButton_2.clicked.connect(self.load_base)
         self.ui.pushButton.clicked.connect(self.load_all)
         self.ui.pushButton_2.clicked.connect(self.load_list)
+        self.ui.pushButton_3.clicked.connect(self.search)
         self.ui.pushButton_4.clicked.connect(self.add_list)
         self.ui.pushButton_5.clicked.connect(self.del_list)
+
+        self.ui.actionExit.triggered.connect(exit)
+        self.ui.action_2.triggered.connect(egg)
+        self.ui.action.triggered.connect(resp)
 
 
     def printf(self, messages:str):
         """
-        输出到控制台（completed）
+        输出到控制台（completed）12/25 12:04
         :return:
         """
         self.ui.plainTextEdit.appendPlainText(messages)
-        pass
+        return True
 
 
     def load_base(self):
         """
         加载配置
-        # TODO
         读取url, Cookie
         create session
         :return:
@@ -144,27 +157,41 @@ class Stats(object):
         启动
         :return:
         """
+        time_str = self.ui.dateTimeEdit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+        delta = self.ui.spinBox.value()
+
         if self.whether_load or len(self.chose_list)==0 or not self.session:
             self.printf("="*30)
             self.printf("请检查是否正确配置或者任务队列是否有内容")
             return False
         self.load_list()
-        grab_courses("1",
+        grab_courses(time_str,
                      self.session,
                      self.chose_list,
                      self.pid,
                      self.used_p,
-                     self.printf)
+                     self.printf,
+                     delta)
         return True
 
 
     def search(self):
         """
-        搜寻
-        # TODO
+        搜寻(Completed) 12/25-12:32
         :return:
         """
-        pass
+        if self.n == 0:
+            self.printf("Error0X16: 请检查是否正确加载数据")
+            return False
+        name_piece = self.ui.lineEdit.text().strip()
+        for searcher in range(self.n):
+            if name_piece in self.teacher_list[searcher]:
+                self.ui.textEdit_4.setText(str(searcher))
+                return True
+
+        self.ui.textEdit_4.setText(str("未找到"))
+        self.printf("没有找到喵, 请检查输入情况")
+        return True
 
 
     def load_all(self):
