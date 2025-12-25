@@ -1,7 +1,11 @@
 # 南航抢课软件(并非)
 南京航空航天大学抢课软件，借鉴了前辈的一些代码，增加了UI界面使得更加易于操作，大大降低使用门槛
+<<<<<<< HEAD
 
 <img src="https://github.com/dboycht/NUAA-Snatcher/blob/main/ico.png?raw=false" alt="ICO">
+=======
+<img src="https://github.com/dboycht/NUAA-Snatcher/blob/main/ico.png?raw=true" alt="ICO">
+>>>>>>> 04352b795ed7e9428899dd6ddf65ebab5e7340dc
 
 本软件公开源代码基于Apache2.0开源协议, 本软件仅用于学习交流, 严禁用于南京航空航天大学的抢课, 一切后果与作者无关
 
