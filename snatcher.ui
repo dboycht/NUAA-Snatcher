@@ -26,7 +26,7 @@
    <cursorShape>WhatsThisCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>NUAA Snatcher V1.2a</string>
+   <string>NUAA Snatcher V1.2b</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
