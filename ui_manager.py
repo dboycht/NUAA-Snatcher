@@ -14,6 +14,7 @@ import sys
 import requests
 import zlib
 import gzip
+from sys import exit
 BASE = "https://aao-eas.nuaa.edu.cn"
 HOME_URL = f"{BASE}/eams/homeExt.action"
 DEFAULT_TPL = f"{BASE}/eams/stdElectCourse!defaultPage.action?electionProfile.id={{pid}}"
@@ -197,7 +198,7 @@ def grab_courses(open_at:str,
             printf(f"抢课界面未开启，剩余：{remain}")
         time.sleep(POST_INTERVAL)
 def resp():
-    webbrowser.open("https://github.com/dboycht/nuaauixuanke")
+    webbrowser.open("https://github.com/dboycht/NUAA-Snatcher")
 def egg():
     webbrowser.open("https://www.bilibili.com/video/BV1GJ411x7h7")
 class Stats(object):

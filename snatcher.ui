@@ -26,7 +26,7 @@
    <cursorShape>WhatsThisCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>NUAA抢课工具 V0.1 Alpha</string>
+   <string>NUAA Snatcher V1.2a</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -461,7 +461,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;仓库：&lt;a href=&quot;https://github.com/dboycht/nuaauixuanke&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#003e92;&quot;&gt;dboycht/nuaauixuanke&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;仓库：github.com/dboycht/NUAA-Snatcher&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
