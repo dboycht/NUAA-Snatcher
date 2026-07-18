@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NUAA 选课工具 V1.3 — PySide6 桌面版
+NUAA 选课工具 V1.3.2 — PySide6 桌面版
 基于 NUAA-Snatcher (github.com/dboycht/NUAA-Snatcher) 重构
 作者: dboycht
 ===================================
@@ -402,13 +402,20 @@ class I18n(QObject):
         "about.disclaimer":{"zh":"严禁用于南京航空航天大学的抢课，一切后果与作者无关。",
                             "en":"Strictly prohibited for course grabbing at NUAA. All consequences are the author's responsibility."},
         "about.changelog_title": {"zh": "更新日志",           "en": "Changelog"},
-        "about.changelog": {"zh": (
+        "about.changelog": {"zh":
+            "V1.3.2 — 功能完善\n"
+            "  • 修复多标签页登录检测\n"
+            "  • 新增「强制提取 Cookie」按钮\n"
+            "  • 新增 Cookie 明文显示\n"
+            "  • 新增中/英文界面切换\n"
+            "  • 新增「关于」Tab\n"
+            "  • 代码清理与稳定性修复\n"
+            "\n"
             "V1.3 — PySide6 桌面版重构\n"
             "  • 全新 PySide6 深色主题界面\n"
             "  • 浏览器弹窗登录 + Cookie 自动提取 + 持久化\n"
             "  • 图形化课程选择（表格 + 搜索 + 全选/反选）\n"
             "  • 预发射定时抢课 + 多 URL 容错 + 限速退避\n"
-            "  • 中/英文界面切换\n"
             "  • 一键安装缺失依赖\n"
             "  • 彩色实时日志 + 提交统计\n"
             "\n"
@@ -430,14 +437,21 @@ class I18n(QObject):
             "  • 修复了 Alpha 0.1 搜寻功能无法正常运行的 bug\n"
             "\n"
             "Alpha 0.1 — 测试版\n"
-            "  • 初始版本，基础选课功能",
-        ), "en": (
+            "  • 初始版本，基础选课功能"
+        , "en":
+            "V1.3.2 — Feature Improvements\n"
+            "  • Fixed multi-tab login detection\n"
+            "  • Added 'Force Extract Cookie' button\n"
+            "  • Added cookie plaintext display\n"
+            "  • Added Chinese/English UI switching\n"
+            "  • Added About tab\n"
+            "  • Code cleanup & stability fixes\n"
+            "\n"
             "V1.3 — PySide6 Desktop Rewrite\n"
             "  • Brand new PySide6 dark-themed UI\n"
             "  • Browser popup login + auto cookie extraction + persistence\n"
             "  • Graphical course selection (table + search + select all/invert)\n"
             "  • Pre-fire timed grab + multi-URL fallback + rate-limit backoff\n"
-            "  • Chinese/English UI switching\n"
             "  • One-click dependency installation\n"
             "  • Color-coded real-time log + statistics\n"
             "\n"
@@ -459,8 +473,8 @@ class I18n(QObject):
             "  • Fixed Alpha 0.1 search bug\n"
             "\n"
             "Alpha 0.1 — Beta\n"
-            "  • Initial release, basic course selection",
-        )},
+            "  • Initial release, basic course selection"
+        },
     }
 
     def __init__(self, settings: QSettings, parent=None):
@@ -1920,7 +1934,7 @@ class AboutTab(QWidget):
         info_group = QGroupBox()
         info_layout = QFormLayout(info_group)
 
-        self.lbl_version = QLabel("V1.3")
+        self.lbl_version = QLabel("V1.3.2")
         self.lbl_version.setFont(QFont("Consolas", 12, QFont.Bold))
         self.lbl_version.setStyleSheet("color: #e94560;")
         info_layout.addRow(f"{i.t('about.version')}：", self.lbl_version)
@@ -1971,7 +1985,8 @@ class AboutTab(QWidget):
 
         self.changelog_text = QTextBrowser()
         self.changelog_text.setFont(QFont("Consolas", 10))
-        self.changelog_text.setPlainText(i.t("about.changelog"))
+        raw = str(i.t("about.changelog"))
+        self.changelog_text.setPlainText(raw)
         changelog_layout.addWidget(self.changelog_text)
 
         layout.addWidget(changelog_group)

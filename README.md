@@ -1,4 +1,4 @@
-# NUAA 选课工具 V1.3 / NUAA Course Grabber V1.3
+# NUAA 选课工具 V1.3.2 / NUAA Course Grabber V1.3.2
 
 > 🏗️ 基于 [NUAA-Snatcher](https://github.com/dboycht/NUAA-Snatcher) 重构 | 作者 [dboycht](https://github.com/dboycht)
 > Based on [NUAA-Snatcher](https://github.com/dboycht/NUAA-Snatcher) | Author [dboycht](https://github.com/dboycht)
@@ -180,12 +180,19 @@ All settings stored in `%APPDATA%/NuuaXuanke/XuankeV2.ini`:
 
 ## 更新日志 / Changelog
 
+### V1.3.2 — 功能完善
+- 修复多标签页登录检测
+- 新增「强制提取 Cookie」按钮
+- 新增 Cookie 明文显示
+- 新增中/英文界面切换
+- 新增「关于」Tab
+- 代码清理与稳定性修复
+
 ### V1.3 — PySide6 桌面版重构
 - 全新 PySide6 深色主题界面
 - 浏览器弹窗登录 + Cookie 自动提取 + 持久化
 - 图形化课程选择（表格 + 搜索 + 全选/反选）
 - 预发射定时抢课 + 多 URL 容错 + 限速退避
-- 中/英文界面切换
 - 一键安装缺失依赖
 - 彩色实时日志 + 提交统计
 
